@@ -5,93 +5,176 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DJ Adu | Booking</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 
-/* ===== RESET ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* ===== FIXED BACKGROUND (iPhone safe) ===== */
-.bg-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("bg.jpg") no-repeat center center;
-  background-size: cover;
-  z-index: -1;
-}
-
-/* ===== BODY ===== */
+/* ===== BODY BACKGROUND ===== */
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  background: url("bg.jpg") no-repeat center center fixed;
+  background-size: cover;
   color: white;
   overflow-x: hidden;
 }
 
-/* ===== CONTAINER ===== */
+/* ===== GLASS CONTAINER ===== */
 .container {
-  min-height: 100vh;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* ===== FORM BOX ===== */
-.form-box {
-  width: 100%;
-  max-width: 400px;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(8px);
+  width: 90%;
+  max-width: 420px;
+  margin: 40px auto;
   padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0,255,255,0.6);
+  border-radius: 20px;
+
+  /* Transparent Glass Effect */
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  box-sizing: border-box;
 }
 
-/* ===== TITLE ===== */
+/* ===== HEADER ===== */
 h1 {
   text-align: center;
-  margin-bottom: 20px;
   font-size: 24px;
-  color: #00ffff;
+  color: #00f7ff;
+  text-shadow: 0 0 12px #00f7ff;
+  margin-bottom: 5px;
 }
 
-/* ===== INPUTS ===== */
-input, textarea, select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
+.subtitle {
+  text-align: center;
   font-size: 14px;
+  color: #ddd;
+  margin-bottom: 15px;
 }
 
-/* ===== BUTTON ===== */
+.tigrinya {
+  text-align: center;
+  font-size: 14px;
+  color: #ff00c8;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px #ff00c8;
+}
+
+/* ===== CONTACT ICONS ===== */
+.contact-icons {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 6px;
+  border-radius: 50%;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.whatsapp {
+  border: 2px solid #25D366;
+  color: #25D366;
+}
+
+.whatsapp:hover {
+  background: #25D366;
+  color: white;
+}
+
+.call {
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+}
+
+.call:hover {
+  background: #00f7ff;
+  color: black;
+}
+
+/* ===== DEPOSIT BOX ===== */
+.deposit-box {
+  background: rgba(0,0,0,0.35);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ff00c8;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== FORM ===== */
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border: 1px solid #00f7ff;
+  box-shadow: 0 0 8px #00f7ff;
+}
+
 button {
   width: 100%;
   padding: 12px;
-  background: #00ffff;
+  border-radius: 12px;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  background: #00f7ff;
+  color: black;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
 button:hover {
-  background: #00cccc;
+  background: #ff00c8;
+  color: white;
 }
 
-/* ===== MOBILE IMPROVEMENTS ===== */
-@media (max-width: 480px) {
-  .form-box {
-    padding: 20px;
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* ===== MOBILE EXTRA SMALL ===== */
+@media (max-width: 400px) {
+  .container {
+    width: 95%;
+    padding: 18px;
+    margin: 25px auto;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input, select, button {
+    font-size: 13px;
+    padding: 8px;
   }
 }
 
@@ -100,35 +183,70 @@ button:hover {
 
 <body>
 
-<!-- Fixed Background -->
-<div class="bg-image"></div>
-
 <div class="container">
-  <div class="form-box">
-    <h1>DJ Adu Booking</h1>
 
-    <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <input type="email" placeholder="Email Address" required>
+<h1>DJ Adu 🎧</h1>
 
-      <input type="date" required>
-      <input type="time" required>
+<div class="contact-icons">
+  <a class="whatsapp" href="https://wa.me/18253658347" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-      <select required>
-        <option value="">Select Event Type</option>
-        <option>Wedding</option>
-        <option>Birthday</option>
-        <option>Corporate</option>
-        <option>Private Party</option>
-      </select>
+  <a class="call" href="tel:+18253658347">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+</div>
 
-      <textarea rows="3" placeholder="Additional Details"></textarea>
+<div class="tigrinya">
+ን መርዓ ንጥምቀት ይኩን ን ዝኮነ ኣጋጣሚ
+</div>
 
-      <button type="submit">Book Now</button>
-    </form>
+<div class="subtitle">
+Professional Event Booking
+</div>
 
-  </div>
+<div class="deposit-box">
+<strong>Deposit: $100 CAD</strong><br><br>
+Send Interac e-Transfer to:<br>
+<strong>abrahamtekle29@gmail.com</strong><br><br>
+• Deposit is non-refundable<br>
+• Booking confirmed after payment verification<br>
+• Remaining balance due on event day
+</div>
+
+<form>
+  <label>Full Name</label>
+  <input type="text" required>
+
+  <label>Email</label>
+  <input type="email" required>
+
+  <label>Phone Number</label>
+  <input type="text" required>
+
+  <label>Event Date</label>
+  <input type="date" required>
+
+  <label>Event Type</label>
+  <select required>
+    <option value="">Select Event Type</option>
+    <option>Wedding</option>
+    <option>Birthday</option>
+    <option>Corporate Event</option>
+    <option>Private Party</option>
+    <option>Other</option>
+  </select>
+
+  <label>Upload e-Transfer Screenshot</label>
+  <input type="file" required>
+
+  <button type="submit">Submit Booking</button>
+</form>
+
+<div class="footer">
+© 2026 DJ Adu | Calgary
+</div>
+
 </div>
 
 </body>
