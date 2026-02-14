@@ -5,47 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DJ Adu | Booking</title>
 
-<!-- Font Awesome for Professional Icons -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* ===== BODY & BACKGROUND ===== */
+
+/* ===== BODY BACKGROUND ===== */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: url("bg.jpg") no-repeat center center fixed;
+  background: url("bg.jpg") no-repeat center center fixed; /* SAME FOLDER */
   background-size: cover;
   color: white;
   overflow-x: hidden;
 }
 
-/* Dark overlay */
+/* Dark overlay (lighter so image shows) */
 body::before {
   content: "";
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.35); /* lighter for visibility */
-  z-index: -3;
-}
-
-/* Animated neon lights */
-body::after {
-  content: "";
-  position: fixed;
-  width: 200%;
-  height: 200%;
-  background:
-    radial-gradient(circle at 20% 30%, #00f7ff55 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, #ff00c855 0%, transparent 40%);
-  animation: moveLights 12s linear infinite alternate;
-  z-index: -2;
-}
-
-@keyframes moveLights {
-  0% { transform: translate(-10%, -10%); }
-  50% { transform: translate(-25%, -15%); }
-  100% { transform: translate(-10%, -10%); }
+  background: rgba(0,0,0,0.25);
+  z-index: -1;
 }
 
 /* ===== CONTAINER ===== */
@@ -56,24 +38,24 @@ body::after {
   padding: 20px;
   border-radius: 15px;
   background: rgba(20,20,20,0.85);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 0 25px #00f7ff;
   box-sizing: border-box;
 }
 
-/* ===== HEADINGS ===== */
+/* ===== HEADER ===== */
 h1 {
   text-align: center;
   color: #00f7ff;
   text-shadow: 0 0 15px #00f7ff;
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .subtitle {
   text-align: center;
   color: #aaa;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 14px;
 }
 
@@ -82,7 +64,7 @@ h1 {
   font-size: 14px;
   color: #ff00c8;
   margin-bottom: 10px;
-  text-shadow: 0 0 15px #ff00c8;
+  text-shadow: 0 0 10px #ff00c8;
 }
 
 /* ===== CONTACT ICONS ===== */
@@ -108,26 +90,22 @@ h1 {
   border: 2px solid #25D366;
   color: #25D366;
   background: #111;
-  box-shadow: 0 0 12px #25D366;
 }
 
 .whatsapp:hover {
   background: #25D366;
   color: white;
-  transform: scale(1.1);
 }
 
 .call {
   border: 2px solid #00f7ff;
   color: #00f7ff;
   background: #111;
-  box-shadow: 0 0 12px #00f7ff;
 }
 
 .call:hover {
   background: #00f7ff;
   color: black;
-  transform: scale(1.1);
 }
 
 /* ===== DEPOSIT BOX ===== */
@@ -148,11 +126,11 @@ label {
   display: block;
 }
 
-input, select, button {
+input, select {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid #00f7ff;
   background: #111;
   color: white;
@@ -161,17 +139,20 @@ input, select, button {
 }
 
 button {
-  font-weight: bold;
-  cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
   background: #00f7ff;
   color: black;
-  border: none;
+  font-weight: bold;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 button:hover {
   background: #ff00c8;
-  box-shadow: 0 0 20px #ff00c8;
+  color: white;
 }
 
 /* ===== FOOTER ===== */
@@ -182,8 +163,8 @@ button:hover {
   color: #aaa;
 }
 
-/* ===== RESPONSIVE ===== */
-@media only screen and (max-width: 400px) {
+/* ===== SMALL PHONE FIX ===== */
+@media (max-width: 400px) {
   .container {
     width: 95%;
     padding: 15px;
@@ -194,22 +175,12 @@ button:hover {
     font-size: 20px;
   }
 
-  .tigrinya {
-    font-size: 13px;
-  }
-
-  .contact-icons a {
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
-    margin: 0 5px;
-  }
-
   input, select, button {
     font-size: 13px;
     padding: 8px;
   }
 }
+
 </style>
 </head>
 
@@ -219,7 +190,6 @@ button:hover {
 
 <h1>DJ Adu 🎧</h1>
 
-<!-- Contact Icons -->
 <div class="contact-icons">
   <a class="whatsapp" href="https://wa.me/18253658347" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
@@ -247,21 +217,21 @@ Send Interac e-Transfer to:<br>
 • Remaining balance due on event day
 </div>
 
-<form action="/book" method="POST" enctype="multipart/form-data">
+<form>
   <label>Full Name</label>
-  <input type="text" name="name" required>
+  <input type="text" required>
 
   <label>Email</label>
-  <input type="email" name="email" required>
+  <input type="email" required>
 
   <label>Phone Number</label>
-  <input type="text" name="phone" required>
+  <input type="text" required>
 
   <label>Event Date</label>
-  <input type="date" name="date" required>
+  <input type="date" required>
 
   <label>Event Type</label>
-  <select name="eventType" required>
+  <select required>
     <option value="">Select Event Type</option>
     <option>Wedding</option>
     <option>Birthday</option>
@@ -271,7 +241,7 @@ Send Interac e-Transfer to:<br>
   </select>
 
   <label>Upload e-Transfer Screenshot</label>
-  <input type="file" name="paymentProof" required>
+  <input type="file" required>
 
   <button type="submit">Submit Booking</button>
 </form>
@@ -284,4 +254,3 @@ Send Interac e-Transfer to:<br>
 
 </body>
 </html>
-
