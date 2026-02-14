@@ -11,35 +11,35 @@
 <style>
 /* ===== BODY & BACKGROUND ===== */
 body {
-  margin:0;
-  font-family:'Segoe UI', sans-serif;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
   background: url("images/bg.jpg") no-repeat center center fixed;
   background-size: cover;
-  color:white;
-  overflow-x:hidden;
+  color: white;
+  overflow-x: hidden;
 }
 
 /* Dark overlay */
 body::before {
-  content:"";
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.35); /* lighter for visibility on mobile */
-  z-index:-3;
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35); /* lighter for visibility */
+  z-index: -3;
 }
 
 /* Animated neon lights */
 body::after {
-  content:"";
-  position:fixed;
-  width:200%;
-  height:200%;
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
   background:
     radial-gradient(circle at 20% 30%, #00f7ff55 0%, transparent 40%),
     radial-gradient(circle at 80% 70%, #ff00c855 0%, transparent 40%);
   animation: moveLights 12s linear infinite alternate;
-  z-index:-2;
+  z-index: -2;
 }
 
 @keyframes moveLights {
@@ -50,11 +50,238 @@ body::after {
 
 /* ===== CONTAINER ===== */
 .container {
-  max-width: 95%;
-  width: 420px;
-  margin: 60px auto;
-  padding: 25px;
-  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 15px;
   background: rgba(20,20,20,0.85);
-  backdr
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 25px #00f7ff;
+  box-sizing: border-box;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+  text-align: center;
+  color: #00f7ff;
+  text-shadow: 0 0 15px #00f7ff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.tigrinya {
+  text-align: center;
+  font-size: 14px;
+  color: #ff00c8;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #ff00c8;
+}
+
+/* ===== CONTACT ICONS ===== */
+.contact-icons {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 6px;
+  border-radius: 50%;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.whatsapp {
+  border: 2px solid #25D366;
+  color: #25D366;
+  background: #111;
+  box-shadow: 0 0 12px #25D366;
+}
+
+.whatsapp:hover {
+  background: #25D366;
+  color: white;
+  transform: scale(1.1);
+}
+
+.call {
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  background: #111;
+  box-shadow: 0 0 12px #00f7ff;
+}
+
+.call:hover {
+  background: #00f7ff;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* ===== DEPOSIT BOX ===== */
+.deposit-box {
+  background: #111;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ff00c8;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== FORM ===== */
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #00f7ff;
+  background: #111;
+  color: white;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+button {
+  font-weight: bold;
+  cursor: pointer;
+  background: #00f7ff;
+  color: black;
+  border: none;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff00c8;
+  box-shadow: 0 0 20px #ff00c8;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* ===== RESPONSIVE ===== */
+@media only screen and (max-width: 400px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .tigrinya {
+    font-size: 13px;
+  }
+
+  .contact-icons a {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    margin: 0 5px;
+  }
+
+  input, select, button {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>DJ Adu 🎧</h1>
+
+<!-- Contact Icons -->
+<div class="contact-icons">
+  <a class="whatsapp" href="https://wa.me/18253658347" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <a class="call" href="tel:+18253658347">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+</div>
+
+<div class="tigrinya">
+ን መርዓ ንጥምቀት ይኩን ን ዝኮነ ኣጋጣሚ
+</div>
+
+<div class="subtitle">
+Professional Event Booking
+</div>
+
+<div class="deposit-box">
+<strong>Deposit: $100 CAD</strong><br><br>
+Send Interac e-Transfer to:<br>
+<strong>abrahamtekle29@gmail.com</strong><br><br>
+• Deposit is non-refundable<br>
+• Booking confirmed after payment verification<br>
+• Remaining balance due on event day
+</div>
+
+<form action="/book" method="POST" enctype="multipart/form-data">
+  <label>Full Name</label>
+  <input type="text" name="name" required>
+
+  <label>Email</label>
+  <input type="email" name="email" required>
+
+  <label>Phone Number</label>
+  <input type="text" name="phone" required>
+
+  <label>Event Date</label>
+  <input type="date" name="date" required>
+
+  <label>Event Type</label>
+  <select name="eventType" required>
+    <option value="">Select Event Type</option>
+    <option>Wedding</option>
+    <option>Birthday</option>
+    <option>Corporate Event</option>
+    <option>Private Party</option>
+    <option>Other</option>
+  </select>
+
+  <label>Upload e-Transfer Screenshot</label>
+  <input type="file" name="paymentProof" required>
+
+  <button type="submit">Submit Booking</button>
+</form>
+
+<div class="footer">
+© 2026 DJ Adu | Calgary
+</div>
+
+</div>
+
+</body>
+</html>
 
