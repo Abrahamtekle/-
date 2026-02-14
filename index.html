@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DJ Adu | Booking</title>
 
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -14,49 +13,43 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: url("dj-bg.jpg") no-repeat center center fixed; /* SAME FOLDER */
+  background: url("bg.jpg") no-repeat center center fixed;
   background-size: cover;
   color: white;
   overflow-x: hidden;
 }
 
-/* Dark overlay (lighter so image shows) */
-body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.25);
-  z-index: -1;
-}
-
-/* ===== CONTAINER ===== */
+/* ===== GLASS CONTAINER ===== */
 .container {
   width: 90%;
   max-width: 420px;
   margin: 40px auto;
-  padding: 20px;
-  border-radius: 15px;
-  background: rgba(20,20,20,0.85);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 25px #00f7ff;
+  padding: 25px;
+  border-radius: 20px;
+
+  /* Transparent Glass Effect */
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
   box-sizing: border-box;
 }
 
 /* ===== HEADER ===== */
 h1 {
   text-align: center;
-  color: #00f7ff;
-  text-shadow: 0 0 15px #00f7ff;
   font-size: 24px;
+  color: #00f7ff;
+  text-shadow: 0 0 12px #00f7ff;
   margin-bottom: 5px;
 }
 
 .subtitle {
   text-align: center;
-  color: #aaa;
-  margin-bottom: 15px;
   font-size: 14px;
+  color: #ddd;
+  margin-bottom: 15px;
 }
 
 .tigrinya {
@@ -64,7 +57,7 @@ h1 {
   font-size: 14px;
   color: #ff00c8;
   margin-bottom: 10px;
-  text-shadow: 0 0 10px #ff00c8;
+  text-shadow: 0 0 8px #ff00c8;
 }
 
 /* ===== CONTACT ICONS ===== */
@@ -89,7 +82,6 @@ h1 {
 .whatsapp {
   border: 2px solid #25D366;
   color: #25D366;
-  background: #111;
 }
 
 .whatsapp:hover {
@@ -100,7 +92,6 @@ h1 {
 .call {
   border: 2px solid #00f7ff;
   color: #00f7ff;
-  background: #111;
 }
 
 .call:hover {
@@ -110,7 +101,7 @@ h1 {
 
 /* ===== DEPOSIT BOX ===== */
 .deposit-box {
-  background: #111;
+  background: rgba(0,0,0,0.35);
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #ff00c8;
@@ -130,18 +121,24 @@ input, select {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #00f7ff;
-  background: #111;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.4);
   color: white;
   font-size: 14px;
   box-sizing: border-box;
 }
 
+input:focus, select:focus {
+  outline: none;
+  border: 1px solid #00f7ff;
+  box-shadow: 0 0 8px #00f7ff;
+}
+
 button {
   width: 100%;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: none;
   background: #00f7ff;
   color: black;
@@ -160,15 +157,15 @@ button:hover {
   text-align: center;
   margin-top: 15px;
   font-size: 12px;
-  color: #aaa;
+  color: #ccc;
 }
 
-/* ===== SMALL PHONE FIX ===== */
+/* ===== MOBILE EXTRA SMALL ===== */
 @media (max-width: 400px) {
   .container {
     width: 95%;
-    padding: 15px;
-    margin: 20px auto;
+    padding: 18px;
+    margin: 25px auto;
   }
 
   h1 {
@@ -254,4 +251,3 @@ Send Interac e-Transfer to:<br>
 
 </body>
 </html>
-
